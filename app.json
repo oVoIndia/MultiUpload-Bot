@@ -1,0 +1,46 @@
+{
+    "name": "Multi Upload Telegram Bot",
+    "description": "A Powerful Bot to Upload A Single File Mane Servers",
+    "logo": "",
+    "keywords": [
+        "telegram",
+        "telethon",
+        "telegram-bot",
+		"TelethonBase",
+		"oVoIndia",
+		"oVo-HxBots",
+        "HxBots"
+    ],
+    "env": {
+        "API_HASH": {
+            "description": "Api Hash",
+            "value": ""
+        },
+        "APP_ID": {
+            "description": "Api Id",
+            "value": ""
+        },
+        "BOT_TOKEN": {
+            "description": "Bot Token That You Got From @botfather",
+            "value": ""
+        },
+        "CHNLUSRNME": {
+            "description": "Your channel to work fsub. Add you channel username without @",
+            "value": "HxBots"
+            "value": "HxBots"
+        },
+        "OWNRID": {
+            "description": "Yr TG ID here bitch",
+            "value": "1252058587"
+        },
+        "LOG_CHANNEL": {
+            "description": "Channel to Log Activities",
+            "value": ""
+        }
+    },
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        }
+    ]
+}
