@@ -16,7 +16,7 @@
             "description": "Api Hash",
             "value": ""
         },
-        "APP_ID": {
+        "API_ID": {
             "description": "Api Id",
             "value": ""
         },
