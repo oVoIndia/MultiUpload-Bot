@@ -24,7 +24,7 @@
             "description": "Bot Token That You Got From @botfather",
             "value": ""
         },
-        "CHNLUSRNME": {
+        "CHNAME": {
             "description": "Your channel to work fsub. Add you channel username without @",
             "value": "HxBots"
         },
