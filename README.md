@@ -24,8 +24,6 @@ _🎯 Follow me and star this repo for more telegram bots. @HxBots
  - APP_ID: Get it from [my.telegram.org](https://my.telegram.org).
  - API_HASH: Get it from [my.telegram.org](https://my.telegram.org).
  - BOT_TOKEN: Go to [@BotFather](https://telegram.me/botfather) and Create new bot. Insert that bot's bot token.
- - LOG_CHANNEL: A channel ID to log all user activities.
- - CHNAME: Channel username for fsub without @.
  - OWNRID: OwnerId for commands (may be in future).
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?)
