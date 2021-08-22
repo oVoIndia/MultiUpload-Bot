@@ -6,6 +6,8 @@ class Config(object):
    API_HASH = os.environ.get("API_HASH")
    # get a token from @BotFather
    BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
+
+class Messages(object):
    HELPMSG = '''
 ➖ **Help Menu | MultiUpload Bot**➖
 ● `/gofile` - Upload files to GoFile
