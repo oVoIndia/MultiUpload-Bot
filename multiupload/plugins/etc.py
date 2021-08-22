@@ -31,10 +31,10 @@ async def help(event):
 		await asyncio.sleep(3)
 	user_id = event.sender_id
 	xx = await event.get_chat()
-	 await event.reply(helpmsg, buttons=[
+	await event.reply(helpmsg, buttons=[
 				Button.url('Support Chat 💭', 't.me/hxsupport')
 			], link_preview=False)
-helpmsg = '''
+helpmsg = f'''
 ➖ **Help Menu | MultiUpload Bot**➖
 ● `/gofile` - Upload files to GoFile
 ● `/anonfile` - Upload files to AnonFile
