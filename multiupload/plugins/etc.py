@@ -5,7 +5,6 @@
 import asyncio, random
 from config import Config
 from telethon import events, Button
-from multiupload.fsub import *
 from multiupload import anjana
 
 s = ["CAADBAADxgkAAjQF0VL5yl4Td0utTgI",
@@ -21,11 +20,8 @@ async def start(event):
 		await asyncio.sleep(3)
 	user_id = event.sender_id
 	xx = await event.get_chat()
-	if event.is_private and not await check_participant(user_id, f'@{Config.CHNAME}', event):
-		return
-	else:
-		await anjana.send_file(event.chat_id, random.choice(s), reply_to=event)
-		await event.reply(f"Hey [{xx.first_name}]({xx.id}), I am **MultiUploader**", buttons=[
+	await anjana.send_file(event.chat_id, random.choice(s), reply_to=event)
+		await event.reply(f"Hey [{xx.first_name}]({xx.id}), I am **MultiUploader Bot**", buttons=[
 				Button.url('Support Chat 💭', 't.me/hxsupport')
 			])
 
@@ -36,10 +32,7 @@ async def help(event):
 		await asyncio.sleep(3)
 	user_id = event.sender_id
 	xx = await event.get_chat()
-	if event.is_private and not await check_participant(user_id, f'@{Config.CHNAME}', event):
-		return
-	else:
-		helpmsg = '''
+	 helpmsg = '''
 ➖ **Help Menu | MultiUpload Bot**➖
 ● `/gofile` - Upload files to GoFile
 ● `/anonfile` - Upload files to AnonFile
