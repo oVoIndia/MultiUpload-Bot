@@ -20,7 +20,7 @@ async def start(event):
 		await asyncio.sleep(3)
 	user_id = event.sender_id
 	xx = await event.get_chat()
-	await anjana.send_file(event.chat_id, random.choice(s), reply_to=event)
+	async with anjana.send_file(event.chat_id, random.choice(s), reply_to=event)
 		await event.reply(f"Hey [{xx.first_name}]({xx.id}), I am **MultiUploader Bot**", buttons=[
 				Button.url('Support Chat 💭', 't.me/hxsupport')
 			])
