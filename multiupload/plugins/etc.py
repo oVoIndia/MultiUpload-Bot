@@ -31,6 +31,18 @@ async def help(event):
 		await asyncio.sleep(3)
 	user_id = event.sender_id
 	xx = await event.get_chat()
-	 await event.reply(tr.HELPMSG, buttons=[
+	 await event.reply(helpmsg, buttons=[
 				Button.url('Support Chat 💭', 't.me/hxsupport')
 			], link_preview=False)
+helpmsg = '''
+➖ **Help Menu | MultiUpload Bot**➖
+● `/gofile` - Upload files to GoFile
+● `/anonfile` - Upload files to AnonFile
+● `/ufile` - Upload files to UFile
+● `/bayfiles` - Upload files to BayFiles
+● `/tsh` - Upload files to TransferSH
+● `/tninja` - Upload files to TmNinja
+● `/fileio` - Upload files to FileIO
+● `/mixdrop` - Upload files to MixDrop
+✦ **Powered By [oVoIndia]**(https://github.com/oVoIndia)
+✦ Made with ♥️ by [HxBots](t.me/hxbots)'''
