@@ -13,8 +13,6 @@ from config import Config
 @anjana.on(events.NewMessage(pattern='^/anonfile'))
 async def anonfile(event):
 	user_id = event.sender_id
-        if event.is_private and not await check_participant(user_id, f'@{Config.CHNAME}', event):
-		return
 	if event.reply_to_msg_id:
 		pass
 	else:
@@ -25,15 +23,7 @@ async def anonfile(event):
 	msg = await event.reply("**Processing...**")
 	amjana = await event.get_reply_message()
 
-	## LOGGING TO A CHANNEL
-	xx = await event.get_chat()
-	reqmsg = f'''Req User: [{xx.first_name}](tg://user?id={xx.id})
-FileName: {amjana.file.name}
-FileSize: {humanbytes(amjana.file.size)}
-#ANONFILE'''
-	await anjana.send_message(Config.LOG_CHANNEL, reqmsg)
-
-        ## Uploading
+	   ## Uploading
 	result = await downloader(
 		f"downloads/{amjana.file.name}",
 		amjana.media.document,
