@@ -6,15 +6,12 @@ import asyncio, os, requests, time
 from requests import post
 from multiupload import anjana
 from telethon.sync import events, Button
-from multiupload.fsub import *
 from multiupload.utils import downloader, humanbytes
 from config import Config
 
 @anjana.on(events.NewMessage(pattern='^/fileio'))
 async def fileio(event):
 	user_id = event.sender_id
-	if event.is_private and not await check_participant(user_id, f'@{Config.CHNAME}', event):
-		return
 	if event.reply_to_msg_id:
 		pass
 	else:
@@ -30,14 +27,7 @@ async def fileio(event):
 	if amjana.file.size > 1048576:
 		return await event.edit("Oof.. File size too Large. FileIO Limitation is 100MB")  
 
-	## LOGGING TO A CHANNEL
-	xx = await event.get_chat()
-	reqmsg = f'''Req User: [{xx.first_name}](tg://user?id={xx.id})
-FileName: {amjana.file.name}
-FileSize: {humanbytes(amjana.file.size)}
-#FILEIO'''
-	await anjana.send_message(Config.LOG_CHANNEL, reqmsg)
-
+	##UPLOADING...
 	result = await downloader(
 		f"downloads/{amjana.file.name}",
 		amjana.media.document,
