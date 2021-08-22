@@ -3,7 +3,7 @@
 # (c) oVoIndia | oVo-HxBots
 
 import asyncio, random
-from config import Config
+from config import Config, Messages as tr
 from telethon import events, Button
 from multiupload import anjana
 
@@ -31,6 +31,6 @@ async def help(event):
 		await asyncio.sleep(3)
 	user_id = event.sender_id
 	xx = await event.get_chat()
-	 await event.reply(Config.HELPMSG, buttons=[
+	 await event.reply(tr.HELPMSG, buttons=[
 				Button.url('Support Chat 💭', 't.me/hxsupport')
 			], link_preview=False)
