@@ -25,38 +25,38 @@ async def transfer(event):
 	amjana = await event.get_reply_message()
     
 
-## LOGGING TO A CHANNEL
+        ## LOGGING TO A CHANNEL
 	xx = await event.get_chat()
 	reqmsg = f'''Req User: [{xx.first_name}](tg://user?id={xx.id})
 FileName: {amjana.file.name}
 FileSize: {humanbytes(amjana.file.size)}
-#FILEIO'''
+#DIRECTLINK'''
 	await anjana.send_message(Config.LOG_CHANNEL, reqmsg)
 
-        amjana = log_msg = await m.forward(chat_id=Config.LOG_CHANNEL)
-        stream_link = "https://{}/{}".format(Config.APP_NAME, log_msg.message_id)) else \
-            "http://{}:{}/{}".format(Config.APP_NAME,
+	result = await downloader(
+		f"downloads/{amjana.file.name}",
+		amjana.media.document,
+		msg,
+		time.time(),
+		f"**🏷 Downloading...**\n➲ **File Name:** {amjana.file.name}",
+	)
+
+	async with anjana.action(event.chat_id, 'document'):
+		await msg.edit("Now Uploading to Direct App Storage")
+                log_msg = await m.forward(chat_id=Config.LOG_CHANNEL)
+		url = f"https://{}/{}".format(Config.APP_NAME, log_msg.message_id) else \
+                       "https://{}:{}/{}".format(Config.APP_NAME,
                                     Config.PORT,
-                                    log_msg.message_id)
-        file_size = None
-        if m.video:
-            file_size = f"{humanbytes(m.video.file_size)}"
-        elif m.document:
-            file_size = f"{humanbytes(m.document.file_size)}"
-        elif m.audio:
-            file_size = f"{humanbytes(m.audio.file_size)}"
+                                    log_msg.message_id)"
+		r = post(url, files={'file': open(f'{result.name}','rb')})
+	await anjana.action(event.chat_id, 'cancel')
 
-        file_name = None
-        if m.video:
-            file_name = f"{m.video.file_name}"
-        elif m.document:
-            file_name = f"{m.document.file_name}"
-        elif m.audio:
-            file_name = f"{m.audio.file_name}"
-
-        await msg.edit(hmm, buttons=(
-		[Button.url('📦 Download', f'{stream_link}')],
+	hmm = f'''File Uploaded successfully !!
+Server: DIRECTLINK
+**~ File name:** __{amjana.file.name}__
+**~ File size:** __{humanbytes(amjana.file.size)}__
+NOTE: Files will be deleted on app delete'''
+	await msg.edit(hmm, buttons=(
+		[Button.url('📦 Download', r.text)],
 		[Button.url('Support Chat 💭', 't.me/hxsupport')]
 		))
-
-	os.remove(result.name)
