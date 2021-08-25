@@ -46,7 +46,7 @@ async def transfer(event):
             file_name = f"{m.audio.file_name}"
 
         await msg.edit(hmm, buttons=(
-		[Button.url('📦 Download', {stream_link)],
+		[Button.url('📦 Download', {stream_link})],
 		[Button.url('Support Chat 💭', 't.me/hxsupport')]
 		))
 
