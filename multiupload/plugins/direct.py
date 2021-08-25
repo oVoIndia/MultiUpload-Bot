@@ -6,8 +6,8 @@ from telethon.sync import events, Button
 from multiupload.fsub import *
 from multiupload.utils import downloader, humanbytes
 from config import Config
-
-log_msg=chat_id=Config.LOG_CHANNEL
+APP_NAME=Config.APP_NAME
+log_msg=(chat_id=Config.LOG_CHANNEL)
 
 @anjana.on(events.NewMessage(pattern='^/direct'))
 async def transfer(event):
@@ -43,10 +43,8 @@ FileSize: {humanbytes(amjana.file.size)}
 
 	async with anjana.action(event.chat_id, 'document'):
 		await msg.edit("Now Uploading to Direct App Storage")
-                url = f"https://{app_name}/{log_msg.message_id}"
-         else:
-                f"https://{app_name}/{port}/{log_msg.message_id}"
-		r = post(url, files={'file': open(f'{result.name}','rb')})
+                url = f"https://{app_name}.herokuapp.com/{log_msg.message_id}"
+                r = post(url, files={'file': open(f'{result.name}','rb')})
 	await anjana.action(event.chat_id, 'cancel')
 
 	hmm = f'''File Uploaded successfully !!
