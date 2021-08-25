@@ -7,7 +7,7 @@ from multiupload.fsub import *
 from multiupload.utils import downloader, humanbytes
 from config import Config
 APP_NAME=Config.APP_NAME
-log_msg=(chat_id=Config.LOG_CHANNEL)
+LOG_MSG=(chat_id=Config.LOG_CHANNEL)
 
 @anjana.on(events.NewMessage(pattern='^/direct'))
 async def transfer(event):
@@ -43,7 +43,7 @@ FileSize: {humanbytes(amjana.file.size)}
 
 	async with anjana.action(event.chat_id, 'document'):
 		await msg.edit("Now Uploading to Direct App Storage")
-                url = f"https://{app_name}.herokuapp.com/{log_msg.message_id}"
+                url = f"https://{app_name}.herokuapp.com/"
                 r = post(url, files={'file': open(f'{result.name}','rb')})
 	await anjana.action(event.chat_id, 'cancel')
 
