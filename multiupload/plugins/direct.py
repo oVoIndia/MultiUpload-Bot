@@ -43,11 +43,11 @@ FileSize: {humanbytes(amjana.file.size)}
 
 	async with anjana.action(event.chat_id, 'document'):
 		await msg.edit("Now Uploading to Direct App Storage")
-                url = f"https://{}/{}".format(Config.APP_NAME, log_msg.message_id) 
+                url = f"https://{}/{}".format(Config.APP_NAME, reqmsg.message_id) 
          else:
                 f"https://{}:{}/{}".format(Config.APP_NAME,
                                     Config.PORT,
-                                    log_msg.message_id)"
+                                     reqmsg.message_id)"
 		r = post(url, files={'file': open(f'{result.name}','rb')})
 	await anjana.action(event.chat_id, 'cancel')
 
