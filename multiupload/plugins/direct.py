@@ -32,7 +32,8 @@ FileName: {amjana.file.name}
 FileSize: {humanbytes(amjana.file.size)}
 #FILEIO'''
 	await anjana.send_message(Config.LOG_CHANNEL, reqmsg)
-        log_msg = await m.forward(chat_id=Config.LOG_CHANNEL)
+
+        amjana = log_msg = await m.forward(chat_id=Config.LOG_CHANNEL)
         stream_link = "https://{}/{}".format(Config.APP_NAME, log_msg.message_id)) else \
             "http://{}:{}/{}".format(Config.APP_NAME,
                                     Config.PORT,
