@@ -43,7 +43,7 @@ FileSize: {humanbytes(amjana.file.size)}
 
 	async with anjana.action(event.chat_id, 'document'):
 		await msg.edit("Now Uploading to Direct App Storage")
-                url = f"https://{app_name}.herokuapp.com/"
+                url = f"https://{Config.APP_NAME}.herokuapp.com/"
                 r = post(url, files={'file': open(f'{result.name}','rb')})
 	await anjana.action(event.chat_id, 'cancel')
 
