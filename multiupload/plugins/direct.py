@@ -23,7 +23,15 @@ async def transfer(event):
 		await asyncio.sleep(2)
 	msg = await event.reply("**Processing...**")
 	amjana = await event.get_reply_message()
-    try:
+    
+
+## LOGGING TO A CHANNEL
+	xx = await event.get_chat()
+	reqmsg = f'''Req User: [{xx.first_name}](tg://user?id={xx.id})
+FileName: {amjana.file.name}
+FileSize: {humanbytes(amjana.file.size)}
+#FILEIO'''
+	await anjana.send_message(Config.LOG_CHANNEL, reqmsg)
         log_msg = await m.forward(chat_id=Config.LOG_CHANNEL)
         stream_link = "https://{}/{}".format(Config.APP_NAME, log_msg.message_id)) else \
             "http://{}:{}/{}".format(Config.APP_NAME,
