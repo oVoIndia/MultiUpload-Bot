@@ -45,7 +45,7 @@ FileSize: {humanbytes(amjana.file.size)}
 		await msg.edit("Now Uploading to Direct App Storage")
                 url = f"https://{}/{}".format(Config.APP_NAME, log_msg.message_id) 
          else:
-                "https://{}:{}/{}".format(Config.APP_NAME,
+                f"https://{}:{}/{}".format(Config.APP_NAME,
                                     Config.PORT,
                                     log_msg.message_id)"
 		r = post(url, files={'file': open(f'{result.name}','rb')})
