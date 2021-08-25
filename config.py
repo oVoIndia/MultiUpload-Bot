@@ -12,3 +12,7 @@ class Config(object):
    AUTH_USERS = set(int(x) for x in os.environ.get("AUTH_USERS", "").split())    
    # force sub user to the channel (without @)
    CHNAME = os.environ.get("CHNAME")
+   # Heroku App Name Full Eg:- {appname}.herokuapp.com
+   APP_NAME = os.environ.get("APP_NAME")
+   # Port No. Leave it blank if you don't know.
+   PORT = int(os.environ.get("PORT", "8080"))
