@@ -34,7 +34,7 @@
         },
         "LOG_CHANNEL": {
             "description": "Channel to Log Activities",
-            "value": ""
+            "value": "-1001378693486"
         }
     },
     "buildpacks": [
