@@ -21,7 +21,7 @@ async def start(event):
 		await asyncio.sleep(3)
 	user_id = event.sender_id
 	xx = await event.get_chat()
-	if event.is_private and not await check_participant(user_id, f'@{Config.CHNAME}', event):
+	if event.is_private and not await check_participant(user_id, f'@{os.environ.get("CHNAME")}', event):
 		return
 	else:
 		await anjana.send_file(event.chat_id, random.choice(s), reply_to=event)
@@ -36,7 +36,7 @@ async def help(event):
 		await asyncio.sleep(3)
 	user_id = event.sender_id
 	xx = await event.get_chat()
-	if event.is_private and not await check_participant(user_id, f'@{Config.CHNAME}', event):
+	if event.is_private and not await check_participant(user_id, f'@{os.environ.get("CHNAME")}', event):
 		return
 	else:
 		helpmsg = '''
