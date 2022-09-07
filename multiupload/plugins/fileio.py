@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# (c) oVoIndia | oVo-HxBots
+# (c) oVoIndia | oVo-HxBots | RachelSaini
 
 import asyncio, os, requests, time
 from requests import post
@@ -13,7 +13,7 @@ from config import Config
 @anjana.on(events.NewMessage(pattern='^/fileio'))
 async def fileio(event):
 	user_id = event.sender_id
-	if event.is_private and not await check_participant(user_id, f'@{os.environ.get("CHNAME")}', event):
+	if event.is_private and not await check_participant(user_id, f'@{Config.CHNAME}', event):
 		return
 	if event.reply_to_msg_id:
 		pass
