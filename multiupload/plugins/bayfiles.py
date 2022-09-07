@@ -13,7 +13,7 @@ from config import Config
 @anjana.on(events.NewMessage(pattern='^/bayfiles'))
 async def bayfiles(event):
 	user_id = event.sender_id
-	if event.is_private and not await check_participant(user_id, f'@{os.environ.get("CHNAME")}', event):
+	if event.is_private and not await check_participant(user_id, f'@{Config.CHNAME}', event):
 		return
 	if not event.reply_to_msg_id:
 		return await event.edit("Please Reply to File")
