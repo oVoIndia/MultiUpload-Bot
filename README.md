@@ -1,4 +1,4 @@
-# oVo MultiUpload V1.0 👀
+# oVo MultiUpload V2.0 👀
 
 #### _A Bot to Upload files to Many Cloud services. Powered by Telethon_
 
