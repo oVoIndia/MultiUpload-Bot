@@ -1,1 +1,1 @@
-worker: python -m multiupload
+web: python -m multiupload
