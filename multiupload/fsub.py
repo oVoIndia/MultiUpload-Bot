@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # (c) oVoIndia | oVo-HxBots
 
-import asyncio, random
+import asyncio, os, time, random
 from config import Config
 from telethon import events, Button
 from multiupload import anjana
